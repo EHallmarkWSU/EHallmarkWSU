@@ -4,7 +4,10 @@
 
 
 
-🎓 I am currently majoring in Computer Science
+
+
+🎓 I am currently majoring in Computer Science and have so far learned a portion of Java.
+
 
 🖥 Throughout last semester I worked on four projects for my 1180 Computer Science class. Of the four, my two favorites were "Simon Says" and "Choose Your Own Adventure."
 
