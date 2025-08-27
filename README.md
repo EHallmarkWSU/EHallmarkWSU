@@ -1,11 +1,6 @@
 ## Hello there, I am Evan and welcome to my GitHub profile! 👋
 
-<!--
-**EHallmarkWSU/EHallmarkWSU** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-🎓 I am currently majoring in Computer Science
+🎓 I am currently majoring in Computer Science and have so far learned a portion of Java.
 
 🖥 Throughout last semester I worked on four projects for my 1180 Computer Science class. Of the four, my two favorites were "Simon Says" and "Choose Your Own Adventure."
 
