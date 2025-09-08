@@ -55,8 +55,8 @@ Command to SSH to AWS instance:
 For each, write the command used or answer the question posed.
 
 1. Command(s) to make file using `sudo`: sudo touch madewithsudo.txt
-2. Command(s) to make file with `root`: sudo touch madewithroot.txt
-3. Describe / compare ownership and permissions of files: the root user has the permission to do anything while the ubuntu user can 
+2. Command(s) to make file with `root`: sudo su - (to get to the root user), touch madewithroot.txt
+3. Describe / compare ownership and permissions of files: the root user has the permission to do anything while the ubuntu user has limited permissions and would have to use sudo to do any kind of permissions.
 4. Which account can do what actions? (Type Y or N in columns)
 
 Contents inside of `share`
