@@ -9,7 +9,7 @@ Full / absolute path to your private key file: ssh -i "C:\Users\yraa5\OneDrive\2
 
 Command to SSH to AWS instance: 
 ```
-[Place your ssh command here]
+ssh-keygen -t ed25519 -C "hallmark.5@wright.edu"
 ```
 
 ## Part 2 Answers
@@ -47,8 +47,8 @@ Command to SSH to AWS instance:
 2. Command(s) to add `ubuntu` & user to group `squad`: sudo usermod -a -G squad ubuntu, sudo usermod -a -G squad ehallmark // I used phoenixnap.com in order to find out how to add members to the group.
 3. Command(s) to allow `squad` to view the `ubuntu` user's home directory contents: sudo chgrp squad /home/ubuntu // phoenixnap.com was also used for this question.
 4. Command(s) to modify `share` to have group ownership of `squad`: sudo chgrp squad share // phoenixnap.com was also used for this question.
-5. Describe your tests and commands with the user account: 
-6. Describe the full set of permissions / settings that enable the user to make edits: 
+5. Describe your tests and commands with the user account: the user can only read the file in share even though the user account is already a member of the owner squad of the file.
+6. Describe the full set of permissions / settings that enable the user to make edits: the user would need to have the `w` displayed with the file permissions; the `w` allows the user to write within the file.
 
 ## Part 5 Answers
 
@@ -56,22 +56,22 @@ For each, write the command used or answer the question posed.
 
 1. Command(s) to make file using `sudo`: sudo touch madewithsudo.txt
 2. Command(s) to make file with `root`: sudo su - (to get to the root user), touch madewithroot.txt
-3. Describe / compare ownership and permissions of files: the root user has the permission to do anything while the ubuntu user has limited permissions and would have to use sudo to do any kind of permissions.
+3. Describe / compare ownership and permissions of files: the root user has the permission to do anything while the ubuntu user has limited permissions and would have to use sudo to do all kinds of permissions.
 4. Which account can do what actions? (Type Y or N in columns)
 
 Contents inside of `share`
 | Account   | Can View  | Can Edit  | Can Change Permissions    |
 | ---       | ---       | ---       | ---                       |
 | `root`    |    Y       |     Y      |               Y            |
-| `ubuntu`  |           |           |                           |
-| `ehallmark`     |           |           |                           |
+| `ubuntu`  |    Y       |      N     |             N              |
+| `ehallmark`     |     Y      |     N      |           N                |
 
 `madewithsudo.txt`
 | Account   | Can View  | Can Edit  | Can Change Permissions    |
 | ---       | ---       | ---       | ---                       |
 | `root`    |    Y       |     Y      |       Y                    |
-| `ubuntu`  |           |           |                           |
-| `ehallmark`     |           |           |                           |
+| `ubuntu`  |     Y      |     N      |           N                |
+| `ehallmark`     |      Y     |    N       |          N                 |
 
 5. Command(s) to modify permissions: 
 6. How to give user account `sudo`: 
