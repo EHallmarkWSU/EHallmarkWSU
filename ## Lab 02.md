@@ -16,19 +16,19 @@ ssh-keygen -t ed25519 -C "hallmark.5@wright.edu"
 
 1. `chmod u+r bubbles.txt`
     - Means: allows the user to read bubbles.txt
-    - Assessment: this is fine, the user can ONLY read bubbles.txt, if they are not the owner of the file, they cannot write nor execute the file but can read the contents of bubbles.txt.
+    - Assessment: this is fine, the user can ONLY read `bubbles.txt`, if they are not the owner of the file, they cannot write nor execute the file but can read the contents of bubbles.txt.
 2. `chmod u=rw,g-w,o-x banana.cabana`
-    - Means: the user can read and write 
-    - Assessment:
+    - Means: the owner can read and write (not execute) `banana.cabana`, the group cannot write in that file, and anyone else cannot execute the file.
+    - Assessment: I would argue that some of these permissions are not very smart. I think the owner should have all 3 permissions (currently missing execute), the group not being able to write but able to read is fine, but being able to execute the file should not be allowed, however, others not being allowed to execute the file is fine, but I am a little bit skeptical of them being able to write in the file.
 3. `chmod a=w snow.md`
-    - Means: 
-    - Assessment:
+    - Means: sets the permissions for all users to write only for `snow.md`
+    - Assessment: I don't think this is bad etiquette for permissions, but if not stated, the users should have the ability to at least read the file if they can already write in a file. 
 4. `chmod 751 program`
-    - Means: 
-    - Assessment:
+    - Means: the owner of `program` can do all permissions (read, write execute), the group can read and execute, and others can execute only.
+    - Assessment: Just like #2 I also think some of these permissions need to be adjusted; owner perms are fine, the group should have only the ability to 
 5. `chmod -R ug+w share`
-    - Means: 
-    - Assessment:
+    - Means: the user and group can write in `share`
+    - Assessment: this is fine, as both the user and group can write in `share`, if both were allowed to execute, then it would be bad.
 
 ## Part 3 Answers
 
@@ -63,18 +63,18 @@ Contents inside of `share`
 | Account   | Can View  | Can Edit  | Can Change Permissions    |
 | ---       | ---       | ---       | ---                       |
 | `root`    |    Y       |     Y      |               Y            |
-| `ubuntu`  |    Y       |      N     |             N              |
-| `ehallmark`     |     Y      |     N      |           N                |
+| `ubuntu`  |    Y       |      Y     |             N              |
+| `ehallmark`     |     Y      |     Y      |           N                |
 
 `madewithsudo.txt`
 | Account   | Can View  | Can Edit  | Can Change Permissions    |
 | ---       | ---       | ---       | ---                       |
 | `root`    |    Y       |     Y      |       Y                    |
-| `ubuntu`  |     Y      |     N      |           N                |
-| `ehallmark`     |      Y     |    N       |          N                 |
+| `ubuntu`  |     Y      |     Y      |           N                |
+| `ehallmark`     |      Y     |    Y       |          N                 |
 
-5. Command(s) to modify permissions: 
-6. How to give user account `sudo`: 
+5. Command(s) to modify permissions: sudo chown ubuntu madewithsudo.txt (gives ubuntu ownership of `madewithsudo.txt`), chgrp squad madewithsudo.txt, chmod o+rw madewithsudo.txt, chmod g+rw madewithsudo.txt // used generative AI for these commands except for the first command of giving ubuntu the owner of `madewithsudo.txt`
+6. How to give user account `sudo`: sudo usermod -aG sudo ehallmark // generative AI was used for this question, asking how to give a user sudo perms.
 
 ## Citations
 
